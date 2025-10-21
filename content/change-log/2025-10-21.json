@@ -1,0 +1,11 @@
+{
+  "title": "v0.1",
+  "description": "Initial start of my portfolio website.",
+  "image": "https://nuxt.com/assets/blog/v3.17.png",
+  "date": "2025-10-21",
+  "to": "https://nuxt.com/blog/v3-17",
+  "target": "_blank",
+  "ui": {
+    "container": "max-w-lg"
+  }
+}
