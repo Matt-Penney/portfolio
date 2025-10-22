@@ -24,7 +24,7 @@ export default defineContentConfig({
     docs: defineCollection({
       type: 'page',
       source: {
-        include: 'docs/**/*.md'
+        include: 'docs/**'
       },
       schema: z.object({
         links: z.array(z.object({

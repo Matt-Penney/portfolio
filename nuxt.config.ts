@@ -26,10 +26,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
-    'docs': {
-      redirect: '/docs/start'
-    }
+    '/': { prerender: true }
   },
 
   compatibilityDate: '2025-01-15',

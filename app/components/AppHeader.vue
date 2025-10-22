@@ -21,10 +21,10 @@ const { header } = useAppConfig()
       Change Log
     </NuxtLink>
     <NuxtLink
-      to="/cv"
+      to="/curriculum-vitae"
       class="ml-6 text-sm font-medium text-muted hover:text-primary transition"
     >
-      CV
+      Curriculum Vitae
     </NuxtLink>
 
     <template
