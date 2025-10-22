@@ -180,6 +180,10 @@ const projectCards = ref([
         class="size-10 shrink-0"
       />
       <UIcon
+        name="i-simple-icons-html5"
+        class="size-10 shrink-0"
+      />
+      <UIcon
         name="i-simple-icons-nuxt"
         class="size-10 shrink-0"
       />
@@ -197,6 +201,10 @@ const projectCards = ref([
       />
       <UIcon
         name="i-simple-icons-tailwindcss"
+        class="size-10 shrink-0"
+      />
+      <UIcon
+        name="i-simple-icons-css"
         class="size-10 shrink-0"
       />
       <UIcon

@@ -44,7 +44,7 @@ provide('navigation', navigation)
       </NuxtLayout>
     </UMain>
 
-    <USeparator icon="i-lucide-user" />
+    <USeparator :avatar="{ src: '/logo.png' }" />
 
     <AppFooter />
 
