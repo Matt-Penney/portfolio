@@ -10,19 +10,19 @@ const { header } = useAppConfig()
   <UHeader>
     <NuxtLink
       to="/docs"
-      class="ml-6 text-sm font-medium text-muted hover:text-primary transition"
+      class="mx-3 text-sm font-medium text-muted hover:text-primary transition"
     >
       Documentation
     </NuxtLink>
     <NuxtLink
       to="/change-log"
-      class="ml-6 text-sm font-medium text-muted hover:text-primary transition"
+      class="mx-3 text-sm font-medium text-muted hover:text-primary transition"
     >
       Change Log
     </NuxtLink>
     <NuxtLink
       to="/curriculum-vitae"
-      class="ml-6 text-sm font-medium text-muted hover:text-primary transition"
+      class="mx-3 text-sm font-medium text-muted hover:text-primary transition"
     >
       Curriculum Vitae
     </NuxtLink>
@@ -36,7 +36,7 @@ const { header } = useAppConfig()
         :light="header?.logo?.light!"
         :dark="header?.logo?.dark!"
         :alt="header?.logo?.alt"
-        class="h-6 w-auto shrink-0"
+        class="h-12 w-auto shrink-0"
       />
 
       <span v-else-if="header?.title">

@@ -95,8 +95,8 @@ const projectCards = ref([
   <div>
     <StarsBg />
     <UPageHero
-      title="My Portfolio"
       description="A professional portfolio showcasing my projects, skills, and experience as a developer."
+      orientation="horizontal"
       :links="[{
         label: 'Get started',
         to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
@@ -112,7 +112,17 @@ const projectCards = ref([
         color: 'neutral',
         variant: 'subtle'
       }]"
-    />
+    >
+      <template #title>
+        Full-Stack <span class="text-primary">Developer</span> with a Passion
+      </template>
+      <template #headline>
+        <UBadge
+          label="Hey, I'm Matthew 👋"
+          variant="soft"
+        />
+      </template>
+    </UPageHero>
 
     <UPageSection
       title="About Myself"
@@ -288,8 +298,8 @@ const projectCards = ref([
 
     <UPageSection>
       <UPageCTA
-        title="Ready to build your next Nuxt app?"
-        description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
+        title="Feel free to reach out!"
+        description="I'm always open to connecting with fellow developers and tech enthusiasts."
         variant="subtle"
         :links="[{
           label: 'Start building',
