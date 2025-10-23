@@ -104,10 +104,9 @@ const projectCards = ref([
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
       }, {
-        label: 'Use this template',
-        to: 'https://github.com/nuxt-ui-templates/starter',
-        target: '_blank',
-        icon: 'i-simple-icons-github',
+        label: 'Take a look at my Docs!',
+        to: '/docs',
+        icon: 'i-lucide-files',
         size: 'xl',
         color: 'neutral',
         variant: 'subtle'
@@ -116,6 +115,7 @@ const projectCards = ref([
       <template #title>
         Full-Stack <span class="text-primary">Developer</span> with a Passion
       </template>
+
       <template #headline>
         <UBadge
           label="Hey, I'm Matthew 👋"
