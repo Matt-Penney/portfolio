@@ -1,4 +1,6 @@
 <script setup>
+import { SpeedInsights } from '@vercel/speed-insights/nuxt'
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -37,6 +39,7 @@ provide('navigation', navigation)
     <AppHeader />
 
     <NuxtLoadingIndicator />
+    <SpeedInsights />
 
     <UMain>
       <NuxtLayout>
