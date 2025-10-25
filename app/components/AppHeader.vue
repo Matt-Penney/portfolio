@@ -63,10 +63,15 @@ const { header } = useAppConfig()
     <template #right>
       <UContentSearchButton
         v-if="header?.search"
-        class=""
+        :collapsed="false"
+        class="hidden md:flex"
+      />
+      <UContentSearchButton
+        v-if="header?.search"
+        class="flex md:hidden"
       />
 
-      <UColorModeButton v-if="header?.colorMode" />
+      <UColorModeSwitch v-if="header?.colorMode" />
 
       <template v-if="header?.links">
         <UButton

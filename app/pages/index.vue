@@ -146,8 +146,8 @@ onMounted(() => {
       description="A professional portfolio showcasing my projects, skills, and experience as a developer."
       orientation="horizontal"
       :links="[{
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
+        label: 'Reach out to me',
+        to: 'mailto:matt.penney2000@hotmail.co.uk',
         target: '_blank',
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
@@ -171,6 +171,7 @@ onMounted(() => {
         <UBadge
           label="Hey, I'm Matthew 👋"
           variant="soft"
+          size="lg"
         />
       </template>
     </UPageHero>
@@ -240,6 +241,10 @@ onMounted(() => {
       />
       <UIcon
         name="i-simple-icons-html5"
+        class="size-10 shrink-0"
+      />
+      <UIcon
+        name="i-simple-icons-drizzle"
         class="size-10 shrink-0"
       />
       <UIcon
@@ -327,8 +332,8 @@ onMounted(() => {
     <UPageSection title="Projects">
       <UPageGrid>
         <UPageCard
-          v-for="(card, index) in projectCards"
-          :key="index"
+          v-for="(card, cardIndex) in projectCards"
+          :key="cardIndex"
           v-bind="card"
           spotlight
           spotlight-color="primary"
@@ -363,14 +368,14 @@ onMounted(() => {
         description="I'm always open to connecting with fellow developers and tech enthusiasts."
         variant="subtle"
         :links="[{
-          label: 'Start building',
-          to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
+          label: 'Get in Touch',
+          to: 'mailto:matt.penney2000@hotmail.co.uk',
           target: '_blank',
-          trailingIcon: 'i-lucide-arrow-right',
+          trailingIcon: 'i-lucide-mail',
           color: 'neutral'
         }, {
-          label: 'View on GitHub',
-          to: 'https://github.com/nuxt-ui-templates/starter',
+          label: 'View me on GitHub',
+          to: 'https://github.com/matt-penney',
           target: '_blank',
           icon: 'i-simple-icons-github',
           color: 'neutral',
