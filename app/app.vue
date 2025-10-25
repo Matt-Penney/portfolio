@@ -24,8 +24,8 @@ useSeoMeta({
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: 'https://example.com/path/to/your/portfolio-image.png', // Update with your portfolio image
-  twitterImage: 'https://example.com/path/to/your/portfolio-image.png', // Update with your portfolio image
+  ogImage: 'https://example.com/path/to/your/portfolio-image.png',
+  twitterImage: 'https://example.com/path/to/your/portfolio-image.png',
   twitterCard: 'summary_large_image'
 })
 

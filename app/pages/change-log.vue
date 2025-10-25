@@ -12,7 +12,7 @@ const { data: versions } = await useAsyncData('change-log', () => queryCollectio
           v-for="(version, index) in versions"
           :key="index"
           v-bind="version"
-          :to="version.path"
+          :to="version.to"
         />
       </UChangelogVersions>
     </UPageBody>
