@@ -1,5 +1,6 @@
 <script setup>
 import { SpeedInsights } from '@vercel/speed-insights/nuxt'
+import { Analytics } from '@vercel/analytics/nuxt'
 
 useHead({
   meta: [
@@ -40,6 +41,7 @@ provide('navigation', navigation)
 
     <NuxtLoadingIndicator />
     <SpeedInsights />
+    <Analytics />
 
     <UMain>
       <NuxtLayout>
