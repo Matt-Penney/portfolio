@@ -1,0 +1,8 @@
+{
+  "title":  "v0.1.4",
+  "description": "Updated project cards with new titles, descriptions, and badges; enhanced image paths and layout.",
+  "date": "2025-10-25",
+  "ui": {
+    "container": "max-w-lg"
+  }
+}

@@ -49,45 +49,47 @@ const timelineItems = ref<TimelineItem[]>([
 
 const projectCards = ref([
   {
-    title: 'Theme',
-    description: 'Learn how to customize Nuxt UI components using Tailwind CSS v4.',
-    icon: 'i-lucide-swatch-book',
-    to: '/docs/getting-started/theme/design-system',
+    title: 'Team Coach Roach',
+    description: 'A web application with a landing page, user authentication, and a dashboard to manage client progress.',
+    icon: 'i-lucide-chart-area',
     class: 'lg:col-span-2',
     image: {
-      path: 'https://ui2.nuxt.com/illustrations/color-palette',
+      lightPath: '/projects/team-coach-roach.jpg',
+      darkPath: '/projects/team-coach-roach.jpg',
       width: 363,
       height: 152
     },
-    orientation: 'horizontal' as const
+    orientation: 'horizontal' as const,
+    badges: ['Nuxt', 'Tailwind CSS', 'Supabase', 'Drizzle ORM', 'TypeScript']
   },
   {
-    title: 'Fonts',
-    description: 'Nuxt UI integrates with Nuxt Fonts to provide plug-and-play font optimization.',
-    icon: 'i-lucide-a-large-small',
-    to: '/docs/getting-started/integrations/fonts',
-    variant: 'soft' as const
+    title: 'Upcoming: System Resource Monitor',
+    description: 'A tool to monitor system resources and performance metrics in real-time using GoLang.',
+    icon: 'i-lucide-monitor-cog',
+    to: undefined, // To Do: Add project link
+    variant: 'soft' as const,
+    badges: ['GoLang']
   },
   {
-    title: 'Color Mode',
-    description: 'Nuxt UI integrates with Nuxt Color Mode to switch between light and dark.',
+    title: 'Filler Title',
+    description: 'A brief description of the project goes here, highlighting its main features and technologies used.',
     icon: 'i-lucide-sun-moon',
-    to: '/docs/getting-started/integrations/color-mode',
     variant: 'soft' as const
   },
   {
-    title: 'Icons',
-    description: 'Nuxt UI integrates with Nuxt Icon to access over 200,000+ icons from Iconify.',
-    icon: 'i-lucide-smile',
-    to: '/docs/getting-started/integrations/icons',
+    title: 'Bobby Geritas Coaching',
+    description: 'A simple landing page for a coaching business built with Nuxt.js and Tailwind CSS, along with payment integration using Lemonsqueezy.',
+    icon: 'i-lucide-biceps-flexed',
     image: {
-      path: 'https://ui2.nuxt.com/illustrations/icon-library',
+      lightPath: '/projects/bobby-geritas-coaching.png',
+      darkPath: '/projects/bobby-geritas-coaching.png',
       width: 362,
       height: 184
     },
     class: 'lg:col-span-2',
     orientation: 'horizontal' as const,
-    reverse: true
+    reverse: true,
+    badges: ['Nuxt', 'Tailwind CSS', 'Lemonsqueezy', 'TypeScript']
   }
 ])
 
@@ -176,7 +178,7 @@ onMounted(() => {
     <UPageSection
       title="About Myself"
       description="I'm a passionate developer with experience in building modern web applications using Nuxt.js and other cutting-edge technologies. Here's a timeline of my professional journey so far."
-      icon="i-lucide-rocket"
+      icon="i-lucide-user"
       orientation="horizontal"
       :links="[{
         label: 'Check out my CV',
@@ -190,37 +192,36 @@ onMounted(() => {
         size="xl"
         :default-value="2"
         :items="timelineItems"
-        class="w-full"
       />
     </UPageSection>
 
     <UPageSection
-      title="Everything you need to build modern Nuxt apps"
-      description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
+      title="Insight into my Skills"
+      description="A comprehensive overview of my technical expertise and the areas I specialize in as a full-stack developer."
       :features="[{
         icon: 'i-lucide-rocket',
         title: 'Full-Stack Development',
-        description: 'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.'
+        description: 'Building complete web applications from database design to user interface. Experienced in creating scalable solutions using modern frameworks like Nuxt.js, with a focus on clean architecture and maintainable code.'
       }, {
         icon: 'i-lucide-palette',
         title: 'UI/UX & Frontend',
-        description: 'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.'
+        description: 'Crafting responsive and accessible user interfaces with Vue.js and Tailwind CSS. I prioritize user experience, ensuring designs are both beautiful and functional across all devices.'
       }, {
         icon: 'i-lucide-zap',
         title: 'Refactoring & Optimisation',
-        description: 'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.'
+        description: 'Improving existing codebases through strategic refactoring and performance optimization. I identify bottlenecks, reduce technical debt, and implement best practices to enhance application speed and maintainability.'
       }, {
         icon: 'i-lucide-blocks',
         title: 'API & Backend',
-        description: 'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.'
+        description: 'Designing and implementing RESTful APIs and backend services. Proficient in C# and Node.js, with experience in authentication, data validation, and integrating third-party services.'
       }, {
         icon: 'i-lucide-code-2',
         title: 'Databases & Dev Tools',
-        description: 'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.'
+        description: 'Working with SQL databases and ORMs like Drizzle. Skilled in using modern development tools including Git, Docker, Cypress for testing, and CI/CD pipelines for automated deployments.'
       }, {
         icon: 'i-lucide-shield-check',
-        title: 'Built for scale',
-        description: 'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.'
+        title: 'Quality & Best Practices',
+        description: 'Committed to writing clean, tested, and documented code. I follow industry standards, implement proper error handling, and ensure security best practices are maintained throughout the development lifecycle.'
       }]"
     />
 
@@ -329,17 +330,29 @@ onMounted(() => {
           v-for="(card, index) in projectCards"
           :key="index"
           v-bind="card"
+          spotlight
+          spotlight-color="primary"
         >
           <UColorModeImage
             v-if="card.image"
-            :light="`${card.image.path}-light.svg`"
-            :dark="`${card.image.path}-dark.svg`"
+            :light="card.image.lightPath"
+            :dark="card.image.darkPath"
             :width="card.image.width"
             :height="card.image.height"
             :alt="card.title"
             loading="lazy"
             class="w-full"
           />
+          <template #footer>
+            <UBadge
+              v-for="(badgeLabel, badgeIndex) in card.badges"
+              :key="badgeIndex"
+              variant="soft"
+              color="primary"
+              :label="badgeLabel"
+              class="mr-2 mt-2"
+            />
+          </template>
         </UPageCard>
       </UPageGrid>
     </UPageSection>
