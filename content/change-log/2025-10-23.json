@@ -3,8 +3,6 @@
  "description":  "Temporary logo. Updated the landing page title. Revised the call-to-action section to encourage connections in design. Added a Dev Tools section to the documentation.",
  "image":  "/logo_16x9.png",
  "date":  "2025-10-23",
- "to":  null,
- "target":  null,
  "ui":  {
    "container":  "max-w-lg" 
  }

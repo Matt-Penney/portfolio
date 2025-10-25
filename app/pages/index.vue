@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { TimelineItem } from '@nuxt/ui'
+import { animate, splitText, stagger } from 'animejs'
 
 const { data: page } = await useAsyncData('index', () => queryCollection('landing').path('/').first())
 if (!page.value) {
@@ -89,11 +90,56 @@ const projectCards = ref([
     reverse: true
   }
 ])
+
+const animatedWords = ref([
+  'Nuxt',
+  'TypeScript',
+  'C#',
+  'GitHub',
+  'SQL',
+  'Tailwind',
+  'Vue.js',
+  'Docker',
+  'Git',
+  'Cypress',
+  'Postman'
+])
+const currentWordIndex = ref(0)
+
+onMounted(() => {
+  const animateWord = () => {
+    const element = document.querySelector('.animeTitle')
+    if (!element) return
+
+    element.textContent = animatedWords.value[currentWordIndex.value]!
+
+    const { words } = splitText('.animeTitle', { words: { wrap: 'clip' } })
+
+    animate(words, {
+      y: [
+        { to: ['100%', '0%'] },
+        { to: '-100%', delay: 2000, ease: 'in(3)' }
+      ],
+      duration: 1000,
+      loop: true,
+      delay: stagger(50),
+      complete: () => {
+        setTimeout(() => {
+          currentWordIndex.value = (currentWordIndex.value + 1) % animatedWords.value.length
+          animateWord()
+        }, 2500)
+      }
+    })
+  }
+
+  animateWord()
+})
 </script>
 
 <template>
   <div>
     <StarsBg />
+
     <UPageHero
       description="A professional portfolio showcasing my projects, skills, and experience as a developer."
       orientation="horizontal"
@@ -113,7 +159,10 @@ const projectCards = ref([
       }]"
     >
       <template #title>
-        Full-Stack <span class="text-primary">Developer</span> with a Passion
+        <p>
+          Full-Stack <span class="text-primary">Developer</span> with expertise in<br>
+          <span class="text-primary animeTitle">{{ animatedWords[0] }}</span>
+        </p>
       </template>
 
       <template #headline>
@@ -146,7 +195,6 @@ const projectCards = ref([
     </UPageSection>
 
     <UPageSection
-      id="features"
       title="Everything you need to build modern Nuxt apps"
       description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
       :features="[{
